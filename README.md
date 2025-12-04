@@ -68,56 +68,57 @@ Take note of the generated public URL — you can use this URL to connect from r
 
 5. Connect with Claude Desktop as MCP Client
 
-Open Claude Desktop → Add MCP server in settings
+- Open Claude Desktop → Add MCP server in settings
 
-Provide command/config to run your server (or point to the public ngrok URL)
+- Provide command/config to run your server (or point to the public ngrok URL)
 
-Then you can issue natural-language queries like:
+- Then you can issue natural-language queries like:
 
-“List the users created in the last 7 days.”
+- “List the users created in the last 7 days.”
 
-“Fetch sales records where amount > 1000.”
+- “Fetch sales records where amount > 1000.”
 
-“Add a new row to the orders table with …”
+- “Add a new row to the orders table with …”
 
 6. Integrate with n8n (Optional)
 
-Use the ngrok public URL (or local server URL if within same network) as the endpoint for MCP calls from n8n
+- Use the ngrok public URL (or local server URL if within same network) as the endpoint for MCP calls from n8n
 
-Create n8n workflows to trigger database queries, data retrieval, updates — driven by events, schedules, webhooks or by AI instructions
+- Create n8n workflows to trigger database queries, data retrieval, updates — driven by events, schedules, webhooks or by AI instructions
 
 🧠 What you learn / Why it matters
 
-Understanding the mechanics of how an MCP server exposes tools and handles requests.
+- Understanding the mechanics of how an MCP server exposes tools and handles requests.
 
-How an MCP client (like Claude Desktop) communicates with the server, and how tool-calling works in structured schema rather than raw code.
+- How an MCP client (like Claude Desktop) communicates with the server, and how tool-calling works in structured schema rather than raw code.
 
-How AI models can be granted database access (PostgreSQL via NeonDB) in a controlled and safe manner.
+- How AI models can be granted database access (PostgreSQL via NeonDB) in a controlled and safe manner.
 
-How local servers can be safely exposed externally (via ngrok) for automation or remote access.
+- How local servers can be safely exposed externally (via ngrok) for automation or remote access.
 
-How AI, database, and automation tools (n8n) can be bridged together — a practical foundation for building “agentic AI + automation” workflows.
+- How AI, database, and automation tools (n8n) can be bridged together — a practical foundation for building “agentic AI + automation” workflows.
 
 ⚠️ Security & Usage Considerations
 
-Be careful when exposing your MCP server publicly via ngrok — restrict access, validate inputs, avoid running on production databases without safeguards.
+- Be careful when exposing your MCP server publicly via ngrok — restrict access, validate inputs, avoid running on production databases without safeguards.
 
-Do not allow arbitrary SQL queries from untrusted users/agents — consider sanitizing inputs or limiting schema/tools exposed.
+- Do not allow arbitrary SQL queries from untrusted users/agents — consider sanitizing inputs or limiting schema/tools exposed.
 
-If you expand the project (e.g. to handle inserts/updates), ensure you implement proper schema validation and permissions.
+- If you expand the project (e.g. to handle inserts/updates), ensure you implement proper schema validation and permissions.
 
-Treat any credentials (database, n8n API keys) securely — do not hard-code them; use environment variables or secure config management.
+- Treat any credentials (database, n8n API keys) securely — do not hard-code them; use environment variables or secure config management.
 
 ✨ Future Improvements / Ideas
 
-Add tool-level abstractions (e.g. “get_user_by_email”, “create_order”) instead of raw SQL — safer and more robust.
+- Add tool-level abstractions (e.g. “get_user_by_email”, “create_order”) instead of raw SQL — safer and more robust.
 
-Add support for parameterized queries to prevent SQL injection.
+- Add support for parameterized queries to prevent SQL injection.
 
-Add logging / audit trail of tool calls and database changes.
+- Add logging / audit trail of tool calls and database changes.
 
-Extend the server to handle more complex workflows — joins, transactions, batch operations, etc.
+- Extend the server to handle more complex workflows — joins, transactions, batch operations, etc.
 
-Provide example n8n workflows to illustrate common use-cases (reporting, alerts, data sync).
+- Provide example n8n workflows to illustrate common use-cases (reporting, alerts, data sync).
 
-Add automated tests.
+- Add automated tests.
+
